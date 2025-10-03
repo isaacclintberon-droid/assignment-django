@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ announcement.title }}</h1>
+  <small>{{ announcement.created_at|date:"M d, Y H:i" }}</small>
+
+  <p id="content" style="max-height: 50px; overflow: hidden;">
+    {{ announcement.content }}
+  </p>
+  <button id="toggleBtn">Read more</button>
+
+  <script>
+    const content = document.getElementById("content");
+    const btn = document.getElementById("toggleBtn");
+    btn.addEventListener("click", function() {
+      if (content.style.maxHeight === "50px") {
+        content.style.maxHeight = "none";
+        btn.textContent = "Show less";
+      } else {
+        content.style.maxHeight = "50px";
+        btn.textContent = "Read more";
+      }
+    });
+  </script>
+{% endblock %}

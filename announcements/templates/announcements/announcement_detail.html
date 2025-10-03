@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ announcement.title }}</h1>
+<p id="content">{{ announcement.content|truncatechars:100 }}</p>
+<button id="toggleBtn">Read more</button>
+
+<script>
+const btn = document.getElementById("toggleBtn");
+const content = document.getElementById("content");
+let expanded = false;
+
+btn.addEventListener("click", () => {
+    if(expanded){
+        content.innerText = "{{ announcement.content|truncatechars:100 }}";
+        btn.innerText = "Read more";
+        expanded = false;
+    } else {
+        content.innerText = "{{ announcement.content }}";
+        btn.innerText = "Show less";
+        expanded = true;
+    }
+});
+</script>
+
+<a href="{% url 'announcement_list' %}">Back to announcements</a>
+{% endblock %}

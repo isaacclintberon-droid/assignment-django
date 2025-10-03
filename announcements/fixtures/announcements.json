@@ -1,0 +1,20 @@
+[
+  {
+    "model": "announcements.announcement",
+    "pk": 1,
+    "fields": {
+      "title": "Welcome to the Site",
+      "content": "This is the very first announcement. It introduces the site and gives some details for new users.",
+      "created_at": "2025-10-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "announcements.announcement",
+    "pk": 2,
+    "fields": {
+      "title": "Maintenance Notice",
+      "content": "The site will be undergoing scheduled maintenance this weekend. Please expect downtime from 12AM to 4AM.",
+      "created_at": "2025-10-02T14:30:00Z"
+    }
+  }
+]

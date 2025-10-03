@@ -1,0 +1,9 @@
+[ ] Installed Python and Django
+[ ] Created Django project
+[ ] Ran server with `python manage.py runserver`
+[ ] Initialized Git in project folder
+[ ] Linked local project to GitHub repo
+[ ] Pulled repo to sync with remote
+[ ] Added and committed project files
+[ ] Pushed project to GitHub
+[ ] Added checklist.txt and reflection.md
