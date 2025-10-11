@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Library</h1>
+
+<h2>Categories</h2>
+<ul>
+  {% for c in categories %}
+    <li>{{ c.name }}</li>
+  {% endfor %}
+</ul>
+
+<h2>Books</h2>
+<ul>
+  {% for b in books %}
+    <li>
+      <strong>{{ b.title }}</strong><br>
+      Author: {{ b.author.name }}<br>
+      Categories:
+      {% for c in b.categories.all %}
+        {{ c.name }}{% if not forloop.last %}, {% endif %}
+      {% endfor %}<br>
+      Published: {{ b.published }}
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}
