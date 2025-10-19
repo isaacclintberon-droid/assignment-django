@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ post.title }}</h1>
+<p>{{ post.body }}</p>
+<p><small>Published: {{ post.published }}</small></p>
+
+<hr>
+<h3>Comments</h3>
+<ul>
+  {% for comment in comments %}
+    <li><strong>{{ comment.name }}</strong>: {{ comment.body }}</li>
+  {% empty %}
+    <li>No comments yet.</li>
+  {% endfor %}
+</ul>
+
+<hr>
+<h3>Add a Comment</h3>
+<form method="post" novalidate>
+  {% csrf_token %}
+  {{ form.non_field_errors }}
+
+  <div class="form-group" {% if form.name.errors %}style="border:1px solid #f44336;padding:6px;"{% endif %}>
+    {{ form.name.label_tag }}<br>
+    {{ form.name }}
+    {% for error in form.name.errors %}
+      <div style="color:#f44336;font-size:0.9em;">{{ error }}</div>
+    {% endfor %}
+  </div>
+
+  <div class="form-group" {% if form.body.errors %}style="border:1px solid #f44336;padding:6px;"{% endif %}>
+    {{ form.body.label_tag }}<br>
+    {{ form.body }}
+    {% for error in form.body.errors %}
+      <div style="color:#f44336;font-size:0.9em;">{{ error }}</div>
+    {% endfor %}
+  </div>
+
+  <button type="submit">Submit Comment</button>
+</form>
+
+{% endblock %}

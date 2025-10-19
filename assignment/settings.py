@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'pages',
     'announcements',
     'library',
+    'posts'
 ]
 
 MIDDLEWARE = [

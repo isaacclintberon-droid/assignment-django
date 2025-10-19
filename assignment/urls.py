@@ -6,4 +6,5 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('announcements/', include('announcements.urls')),
     path('library/', include('library.urls')),
+    path('posts/', include('posts.urls')),
 ]
